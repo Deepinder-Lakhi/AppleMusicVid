@@ -55,15 +55,9 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommunictionDelegate, 
     func serverResponseArrived(Response: AnyObject)
     {
         self.jsonResult = Response as! NSDictionary
-//        let success = self.jsonResult.objectForKey("success") as! Int
-        
-//        if success == 1
-//        {
-//            self.musicVideoArray.removeAllObjects()
-            self.musicVideoArray = (self.jsonResult.objectForKey("feed")!.objectForKey("entry")) as! NSMutableArray
-            print(musicVideoArray);
-            self.musicListTableView.reloadData()
-//        }
+        self.musicVideoArray = (self.jsonResult.objectForKey("feed")!.objectForKey("entry")) as! NSMutableArray
+        print(musicVideoArray);
+        self.musicListTableView.reloadData()
     }
 }
 
