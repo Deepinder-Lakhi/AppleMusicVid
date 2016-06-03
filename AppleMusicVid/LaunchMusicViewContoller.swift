@@ -3,23 +3,21 @@
 //  AppleMusicVid
 //
 //  Created by DEEPINDERPAL SINGH on 24/05/16.
-//  Copyright © 2016 Dimonds Infosys Pvt Ltd. All rights reserved.
+//  Copyright © 2016 Diamonds Mobile Tech Pvt Ltd. All rights reserved.
 //  This is my new feature
 
 import Foundation
 
-class LaunchMusicViewContoller: BaseViewController, ServerCommunictionDelegate, UITableViewDelegate, UITableViewDataSource
+class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet var musicListTableView: UITableView!;
     var musicVideoArray = NSMutableArray()
-    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         sereverCommunication.delegate = self
-        let parameterString = NSString(string:"")
-        sereverCommunication.getRequest(parameterString as String, viewController: self)
+        sereverCommunication.getRequest("" as String, viewController: self)
     }
     
     //MARk:- TableView delegate
@@ -35,15 +33,47 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommunictionDelegate, 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Video Cell", forIndexPath: indexPath) as! CustomMusicCell
 //        let object = objects[indexPath.row]
+        
+        let artistNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        
+        let PublisherNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        
+        print (musicVideoArray)
+//        let imageName = self.jsonResult.objectForKey("image") as? String
+//        print(self.musicVideoArray)
+//    print(self.musicVideoArray.objectAtIndex(indexPath.row).valueForKey("im:price") as! String)
+//        ßself.musicVideoArray.valueForKey("im:image").valueForKey("label")!.valueForKey("attributes")!.objectAtIndex(indexPath.row) as? String/
+        let imageName = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        
+        let imageUrl = NSURL(string:imageName!)!
+        cell.musicImgView.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "default"))
+        
 
-        print(self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String);
-        cell.textLabel?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        
+        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        
+        cell.discriptionLbl?.text = NSString(string: "\(PublisherNameStr) /n \(artistNameStr)") as String
+//        print(self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String);
+//        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
 
 //        cell.textLabel?.text = self.musicVideoArray.objectForKey("feed")![indexPath.row] as? String
         return cell
     }
+    
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        //Before animate of cell
+//        cell.alpha = 0
+//        cell.layer.transform = CATransform3DMakeTranslation(0, 250, 20)
+//
+//        
+//        //After animation of cell
+//        UIView.animateWithDuration(1.0) {
+//            cell.alpha = 1
+//        }
+//        
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

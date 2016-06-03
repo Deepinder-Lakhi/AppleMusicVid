@@ -3,7 +3,7 @@
 //  AppleMusicVid
 //
 //  Created by DEEPINDERPAL SINGH on 24/05/16.
-//  Copyright © 2016 Dimonds Infosys Pvt Ltd. All rights reserved.
+//  Copyright © 2016 Diamonds Mobile Tech Pvt Ltd. All rights reserved.
 //
 
 import UIKit

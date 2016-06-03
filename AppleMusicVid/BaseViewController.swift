@@ -9,14 +9,11 @@
 import UIKit
 
 var selectedUserCategory = NSString()
-var baseUrl = String("https://itunes.apple.com/in/rss/topmusicvideos/limit=10/json")
+var baseUrlStr = String("https://itunes.apple.com/")
+var trailingUrlStr = String("/rss/topmusicvideos/limit=10/json")
 var imageBaseUrl = String("http://appsmaventech.com/quiz/uploads/")
 
-var user_ID = String()
-var subjectID = String()
-var groupID = NSString()
-var subjectName = String()
-var groupCount = String()
+var user_Region = String()
 
 
 class BaseViewController: UIViewController
@@ -24,7 +21,7 @@ class BaseViewController: UIViewController
     //MARK:- Outlet
     //MARK:-
     
-    let sereverCommunication : ServerCommunicationClass = ServerCommunicationClass()
+    let sereverCommunication : ServerComm = ServerComm()
     var jsonResult = NSDictionary()
     
     
@@ -53,10 +50,24 @@ class BaseViewController: UIViewController
         
         if ((NSUserDefaults.standardUserDefaults().valueForKey("userLoggedIn")? .isEqualToString("teacher")) != nil) || ((NSUserDefaults.standardUserDefaults().valueForKey("userLoggedIn")? .isEqualToString("student")) != nil)
         {
-            user_ID = (NSUserDefaults.standardUserDefaults().valueForKey("USER_ID") as? String)!
-            print("this is the user %@",user_ID)
+            user_Region = (NSUserDefaults.standardUserDefaults().valueForKey("userRegion") as? String)!
+            print("User is from %@",user_Region)
         }
+        
+        
+        //call api
+//        let api = APIManager()
+//        api.loadData("https://itunes.apple.com/search?term=jack+johnson")
+//        {
+//            (result:String) in
+//            print (result)
+//        }
     }
+    
+//    func didLoadData (result:AnyObject)
+//    {
+//        print(result)
+//    }
     
     
     //MARK:- Custom Method
@@ -87,26 +98,15 @@ class BaseViewController: UIViewController
     //MARK:- User Default list
     //MARK:-
     
+//    func emptyUserDefault()
+//    {
+//      NSUserDefaults.standardUserDefaults().removeObjectForKey("acceptConditions")
+//
+//    }
+    
     func emptyUserDefault()
     {
-      NSUserDefaults.standardUserDefaults().removeObjectForKey("acceptConditions")
-
-    }
-    
-    func logout()
-    {
-    
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("USER_ID")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("USER_NAME")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("USER_IMAGE")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("userLoggedIn")
-        
-        user_ID = ""
-        subjectID = ""
-        subjectName = ""
-        groupCount = ""
-        
-    
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("userRegion")
     }
     
     override func didReceiveMemoryWarning()

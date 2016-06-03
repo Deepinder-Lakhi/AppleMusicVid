@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E27BDB41CFDBCAA00A32D5C /* CustomMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */; };
+		5E5AD75A1CF86F7700DDEDE8 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */; };
 		5E6E1BD81CF4846D00AECE59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */; };
 		5E6E1BDD1CF4846D00AECE59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6E1BDB1CF4846D00AECE59 /* Main.storyboard */; };
 		5E6E1BDF1CF4846E00AECE59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6E1BDE1CF4846E00AECE59 /* Assets.xcassets */; };
 		5E6E1BE21CF4846E00AECE59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6E1BE01CF4846E00AECE59 /* LaunchScreen.storyboard */; };
 		5E6E1BED1CF4846E00AECE59 /* AppleMusicVidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1BEC1CF4846E00AECE59 /* AppleMusicVidTests.swift */; };
 		5E6E1BF81CF4846E00AECE59 /* AppleMusicVidUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1BF71CF4846E00AECE59 /* AppleMusicVidUITests.swift */; };
-		5E6E1C061CF4847D00AECE59 /* ServerCommunicationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C051CF4847D00AECE59 /* ServerCommunicationClass.swift */; };
+		5E6E1C061CF4847D00AECE59 /* ServerComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C051CF4847D00AECE59 /* ServerComm.swift */; };
 		5E6E1C081CF4849500AECE59 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C071CF4849500AECE59 /* BaseViewController.swift */; };
 		5E6E1C0B1CF4852800AECE59 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C0A1CF4852800AECE59 /* Reachability.swift */; };
 		5E6E1C0E1CF4853B00AECE59 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C0D1CF4853B00AECE59 /* MBProgressHUD.m */; };
@@ -35,6 +37,8 @@
 		5E6E1C401CF4855D00AECE59 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C2E1CF4855D00AECE59 /* UIImageView+WebCache.m */; };
 		5E6E1C411CF4855D00AECE59 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C301CF4855D00AECE59 /* UIView+WebCacheOperation.m */; };
 		5E6E1C4B1CF487E700AECE59 /* LaunchMusicViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */; };
+		5ED164131CFD78E30070D36B /* CountryListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED164121CFD78E30070D36B /* CountryListInfo.swift */; };
+		5EF180C91CFFF20F00EED035 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF180C81CFFF20F00EED035 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMusicCell.swift; sourceTree = "<group>"; };
+		5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
 		5E6E1BD41CF4846D00AECE59 /* AppleMusicVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E6E1BDC1CF4846D00AECE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,7 +73,7 @@
 		5E6E1BF31CF4846E00AECE59 /* AppleMusicVidUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleMusicVidUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6E1BF71CF4846E00AECE59 /* AppleMusicVidUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicVidUITests.swift; sourceTree = "<group>"; };
 		5E6E1BF91CF4846E00AECE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E6E1C051CF4847D00AECE59 /* ServerCommunicationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCommunicationClass.swift; sourceTree = "<group>"; };
+		5E6E1C051CF4847D00AECE59 /* ServerComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerComm.swift; sourceTree = "<group>"; };
 		5E6E1C071CF4849500AECE59 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5E6E1C091CF484A700AECE59 /* AppleMusicVid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppleMusicVid-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E6E1C0A1CF4852800AECE59 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 		5E6E1C2F1CF4855D00AECE59 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		5E6E1C301CF4855D00AECE59 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchMusicViewContoller.swift; sourceTree = "<group>"; };
+		5ED164121CFD78E30070D36B /* CountryListInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListInfo.swift; sourceTree = "<group>"; };
+		5EF180C81CFFF20F00EED035 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,17 +166,11 @@
 		5E6E1BD61CF4846D00AECE59 /* AppleMusicVid */ = {
 			isa = PBXGroup;
 			children = (
-				5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */,
-				5E6E1C071CF4849500AECE59 /* BaseViewController.swift */,
-				5E6E1C051CF4847D00AECE59 /* ServerCommunicationClass.swift */,
-				5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */,
-				5E6E1C091CF484A700AECE59 /* AppleMusicVid-Bridging-Header.h */,
 				5E6E1C451CF4859F00AECE59 /* vendor */,
-				5E6E1BDB1CF4846D00AECE59 /* Main.storyboard */,
-				5E6E1C221CF4855D00AECE59 /* star.png */,
-				5E6E1BDE1CF4846E00AECE59 /* Assets.xcassets */,
-				5E6E1BE01CF4846E00AECE59 /* LaunchScreen.storyboard */,
-				5E6E1BE31CF4846E00AECE59 /* Info.plist */,
+				5EF180C41CFFF0D400EED035 /* Supporting files */,
+				5EF180C61CFFF10900EED035 /* model */,
+				5EF180C71CFFF11D00EED035 /* view */,
+				5EF180C51CFFF0FC00EED035 /* controller */,
 			);
 			path = AppleMusicVid;
 			sourceTree = "<group>";
@@ -256,6 +258,48 @@
 				5E6E1C421CF4857300AECE59 /* SDWebImage */,
 			);
 			name = vendor;
+			sourceTree = "<group>";
+		};
+		5EF180C41CFFF0D400EED035 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				5E6E1C221CF4855D00AECE59 /* star.png */,
+				5E6E1BE31CF4846E00AECE59 /* Info.plist */,
+				5E6E1BDE1CF4846E00AECE59 /* Assets.xcassets */,
+				5E6E1C091CF484A700AECE59 /* AppleMusicVid-Bridging-Header.h */,
+				5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		5EF180C51CFFF0FC00EED035 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E6E1C071CF4849500AECE59 /* BaseViewController.swift */,
+				5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */,
+				5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		5EF180C61CFFF10900EED035 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5EF180C81CFFF20F00EED035 /* APIManager.swift */,
+				5ED164121CFD78E30070D36B /* CountryListInfo.swift */,
+				5E6E1C051CF4847D00AECE59 /* ServerComm.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5EF180C71CFFF11D00EED035 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */,
+				5E6E1BDB1CF4846D00AECE59 /* Main.storyboard */,
+				5E6E1BE01CF4846E00AECE59 /* LaunchScreen.storyboard */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,23 +434,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6E1C061CF4847D00AECE59 /* ServerCommunicationClass.swift in Sources */,
+				5E6E1C061CF4847D00AECE59 /* ServerComm.swift in Sources */,
 				5E6E1C381CF4855D00AECE59 /* SDWebImageManager.m in Sources */,
 				5E6E1C331CF4855D00AECE59 /* SDImageCache.m in Sources */,
 				5E6E1C371CF4855D00AECE59 /* SDWebImageDownloaderOperation.m in Sources */,
+				5E5AD75A1CF86F7700DDEDE8 /* CountryPickerViewController.swift in Sources */,
 				5E6E1C411CF4855D00AECE59 /* UIView+WebCacheOperation.m in Sources */,
 				5E6E1C0E1CF4853B00AECE59 /* MBProgressHUD.m in Sources */,
 				5E6E1C3B1CF4855D00AECE59 /* UIButton+WebCache.m in Sources */,
 				5E6E1C321CF4855D00AECE59 /* NSData+ImageContentType.m in Sources */,
 				5E6E1C4B1CF487E700AECE59 /* LaunchMusicViewContoller.swift in Sources */,
+				5EF180C91CFFF20F00EED035 /* APIManager.swift in Sources */,
 				5E6E1C391CF4855D00AECE59 /* SDWebImagePrefetcher.m in Sources */,
 				5E6E1C361CF4855D00AECE59 /* SDWebImageDownloader.m in Sources */,
+				5ED164131CFD78E30070D36B /* CountryListInfo.swift in Sources */,
 				5E6E1C081CF4849500AECE59 /* BaseViewController.swift in Sources */,
 				5E6E1C3E1CF4855D00AECE59 /* UIImage+WebP.m in Sources */,
 				5E6E1C401CF4855D00AECE59 /* UIImageView+WebCache.m in Sources */,
 				5E6E1C351CF4855D00AECE59 /* SDWebImageDecoder.m in Sources */,
 				5E6E1C311CF4855D00AECE59 /* MKAnnotationView+WebCache.m in Sources */,
 				5E6E1C341CF4855D00AECE59 /* SDWebImageCompat.m in Sources */,
+				5E27BDB41CFDBCAA00A32D5C /* CustomMusicCell.swift in Sources */,
 				5E6E1C0B1CF4852800AECE59 /* Reachability.swift in Sources */,
 				5E6E1BD81CF4846D00AECE59 /* AppDelegate.swift in Sources */,
 				5E6E1C3D1CF4855D00AECE59 /* UIImage+MultiFormat.m in Sources */,
@@ -553,11 +601,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AppleMusicVid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimonds.AppleMusicVid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppleMusicVid/AppleMusicVid-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -567,11 +619,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AppleMusicVid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimonds.AppleMusicVid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppleMusicVid/AppleMusicVid-Bridging-Header.h";
 			};
 			name = Release;

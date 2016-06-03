@@ -4,7 +4,7 @@
 
 #import "MBProgressHUD.h"
 //#import "SWRevealViewController.h"
-//#import "UIImageView+WebCache.h"
-//#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 
 

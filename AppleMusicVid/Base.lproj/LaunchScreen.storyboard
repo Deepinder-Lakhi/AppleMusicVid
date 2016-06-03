@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,15 +14,54 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqJ-ig-kji">
+                                <rect key="frame" x="0.0" y="241" width="375" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="rnN-sg-jZX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="150"/>
+                                <color key="textColor" red="0.074242555230000007" green="0.34795320699999999" blue="0.4852735057" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.043137254899999998" green="0.19215686269999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="3" height="-3"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APPLEMUSICVID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="iai-2x-WQV">
+                                <rect key="frame" x="46" y="396" width="282" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="Isu-2b-Bs1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.074242555230000007" green="0.34795320699999999" blue="0.4852735057" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vqJ-ig-kji" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="221" id="1Df-Wa-Zio"/>
+                            <constraint firstItem="vqJ-ig-kji" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Cvt-s6-Esr"/>
+                            <constraint firstItem="iai-2x-WQV" firstAttribute="top" secondItem="vqJ-ig-kji" secondAttribute="bottom" constant="-31" id="JgE-9L-XAo"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vqJ-ig-kji" secondAttribute="bottom" constant="240" id="Wfb-Fv-cbG"/>
+                            <constraint firstAttribute="trailing" secondItem="vqJ-ig-kji" secondAttribute="trailing" id="g0e-J9-M4I"/>
+                            <constraint firstItem="vqJ-ig-kji" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jNa-xQ-Pyd"/>
+                            <constraint firstAttribute="trailing" secondItem="iai-2x-WQV" secondAttribute="trailing" constant="47" id="lRM-aK-Ymy"/>
+                            <constraint firstItem="iai-2x-WQV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="46" id="mhR-FB-iyS"/>
+                            <constraint firstItem="vqJ-ig-kji" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="qf8-Zt-Bjy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Df-Wa-Zio"/>
+                                <exclude reference="Wfb-Fv-cbG"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
 </document>

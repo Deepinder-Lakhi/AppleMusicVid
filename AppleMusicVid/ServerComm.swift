@@ -1,5 +1,5 @@
 //
-//  ServerCommunicationClass.swift
+//  ServerComm.swift
 //  Education
 //
 //  Created by OSX on 07/04/16.
@@ -10,15 +10,17 @@ import UIKit
 import SystemConfiguration
 
 
-protocol ServerCommunictionDelegate
+
+protocol ServerCommDelegate
 {
     func serverResponseArrived(Response:AnyObject)
 }
 
-class ServerCommunicationClass: NSObject
+class ServerComm: NSObject
 {
-    var delegate:ServerCommunictionDelegate! = nil
-    
+    var delegate:ServerCommDelegate! = nil
+    var optionalString = NSString()
+    let prefs = NSUserDefaults.standardUserDefaults()
     
     //MARK:- Web services Method
     //MARK:-
@@ -32,7 +34,7 @@ class ServerCommunicationClass: NSObject
         {
             startIndicator(viewController.view)
             
-            var urlString = NSString(string:"\(baseUrl)\(parameterString)")
+            var urlString = NSString(string:"\(baseUrlStr)\(trailingUrlStr)\(parameterString)")
             print(urlString)
             
             urlString = urlString .stringByReplacingOccurrencesOfString(" ", withString: "%20")
@@ -104,7 +106,7 @@ class ServerCommunicationClass: NSObject
         {
             startIndicator(viewController.view)
             
-            var urlString = NSString(string:"\(baseUrl)\(parameterString)")
+            var urlString = NSString(string:"\(baseUrlStr)\(trailingUrlStr)\(parameterString)")
             print(urlString)
             
             urlString = urlString .stringByReplacingOccurrencesOfString(" ", withString: "%20")
@@ -154,19 +156,20 @@ class ServerCommunicationClass: NSObject
         if isConnectedInternet
         {
             startIndicator(viewController.view)
+            print(prefs.objectForKey("userRegion") as! String)
+            optionalString = prefs.objectForKey("userRegion") as! String
             
-            var urlString = NSString(string:"\(baseUrl)\(parameterString)")
+            var urlString = NSString(string:"\(baseUrlStr)\(optionalString)\(trailingUrlStr)\(parameterString)")
             print(urlString)
             
             urlString = urlString .stringByReplacingOccurrencesOfString(" ", withString: "%20")
             
             let url:NSURL = NSURL(string: urlString as String)!
             let session = NSURLSession.sharedSession()
-            
             let request = NSMutableURLRequest(URL: url)
             request.HTTPMethod = "GET"
             request.timeoutInterval = 25;
-            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+//            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
             let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
                 var errorStr = String()
                 NSOperationQueue.mainQueue().addOperationWithBlock
@@ -186,10 +189,8 @@ class ServerCommunicationClass: NSObject
                             let jsonResult: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers)
                             
                             self.delegate.serverResponseArrived(jsonResult)
-                            
                         }
                 }
-                
             })
             
             task.resume()
