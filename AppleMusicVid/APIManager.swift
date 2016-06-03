@@ -12,31 +12,46 @@ class APIManager {
     
     func loadData(urlString:String, completion: (result: String) -> Void)
     {
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: urlString)!
+        let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+        let session = NSURLSession(configuration: config)
         
+        let url = NSURL(string: urlString)!
         let task = session.dataTaskWithURL(url) {
             (data, response, error) -> Void in
             
-            dispatch_async(dispatch_get_main_queue())
-            {
-                if error != nil
-                {
-                    completion(result: (error!.localizedDescription))
-                } else
-                {
-                    response
-//                    completion(result: response as String)
-//                    print(data)
-                    let result = NSString(data: data!, encoding:NSASCIIStringEncoding)!
-                    print("Body: \(result)")
-                    
-                    let jsonResult: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers)
-                    completion (result:jsonResult as! String);
-
+            if error != nil{
+                //Handling error here
+                dispatch_async(dispatch_get_main_queue()){
+                    completion(result: error!.localizedDescription)
+                }
+            } else {
+                //Handling json serialization
+                
+                do {
+                    /*.AllowFragments - top level of object it not a array or dictioanry.
+                     Any type string or value
+                     NSJSonSerialization requires the Do / Try / Catch
+                     Convert NSData into JSON object cast it to the dictionary*/
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject] {
+                        
+                        print(json)
+                        
+                        let priority = DISPATCH_QUEUE_PRIORITY_HIGH
+                        dispatch_sync(dispatch_get_global_queue(priority, 0)){
+                            dispatch_sync(dispatch_get_main_queue()){
+                                completion(result: "NSUrlSession Successfull")
+                            }
+                        }
+                    }
+                } catch {
+                        
+                        //Handling error here
+                        dispatch_async(dispatch_get_main_queue()){
+                            completion(result: "Error in NSUrlSession")
+                        }
+                    }
                 }
             }
-        }
         task.resume()
-    }
+        }
 }

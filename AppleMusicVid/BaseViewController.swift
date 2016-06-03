@@ -56,12 +56,12 @@ class BaseViewController: UIViewController
         
         
         //call api
-//        let api = APIManager()
-//        api.loadData("https://itunes.apple.com/search?term=jack+johnson")
-//        {
-//            (result:String) in
-//            print (result)
-//        }
+        let api = APIManager()
+        api.loadData("https://itunes.apple.com/search?term=jack+johnson")
+        {
+            (result:String) in
+            print (result)
+        }
     }
     
 //    func didLoadData (result:AnyObject)

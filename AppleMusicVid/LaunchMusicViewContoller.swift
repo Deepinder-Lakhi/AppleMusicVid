@@ -49,7 +49,6 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
         
         let imageUrl = NSURL(string:imageName!)!
         cell.musicImgView.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "default"))
-        
 
         
         cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
