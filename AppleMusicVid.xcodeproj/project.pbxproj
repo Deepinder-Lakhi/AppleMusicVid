@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E27BDB41CFDBCAA00A32D5C /* CustomMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */; };
 		5E5AD75A1CF86F7700DDEDE8 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */; };
+		5E5B4C7C1D057C370028F67A /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B4C7B1D057C360028F67A /* constant.swift */; };
+		5E5B4C811D05892C0028F67A /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B4C801D05892B0028F67A /* MusicVideo.swift */; };
 		5E6E1BD81CF4846D00AECE59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */; };
 		5E6E1BDD1CF4846D00AECE59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6E1BDB1CF4846D00AECE59 /* Main.storyboard */; };
 		5E6E1BDF1CF4846E00AECE59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6E1BDE1CF4846E00AECE59 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMusicCell.swift; sourceTree = "<group>"; };
 		5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
+		5E5B4C7B1D057C360028F67A /* constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		5E5B4C801D05892B0028F67A /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
 		5E6E1BD41CF4846D00AECE59 /* AppleMusicVid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicVid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E6E1BDC1CF4846D00AECE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +147,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E5B4C7D1D057C4D0028F67A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B4C7B1D057C360028F67A /* constant.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		5E5B4C7F1D057C6D0028F67A /* obj-c */ = {
+			isa = PBXGroup;
+			children = (
+				5E6E1C091CF484A700AECE59 /* AppleMusicVid-Bridging-Header.h */,
+			);
+			name = "obj-c";
+			sourceTree = "<group>";
+		};
 		5E6E1BCB1CF4846D00AECE59 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +186,8 @@
 		5E6E1BD61CF4846D00AECE59 /* AppleMusicVid */ = {
 			isa = PBXGroup;
 			children = (
+				5E5B4C7F1D057C6D0028F67A /* obj-c */,
+				5E5B4C7D1D057C4D0028F67A /* utils */,
 				5E6E1C451CF4859F00AECE59 /* vendor */,
 				5EF180C41CFFF0D400EED035 /* Supporting files */,
 				5EF180C61CFFF10900EED035 /* model */,
@@ -266,7 +288,6 @@
 				5E6E1C221CF4855D00AECE59 /* star.png */,
 				5E6E1BE31CF4846E00AECE59 /* Info.plist */,
 				5E6E1BDE1CF4846E00AECE59 /* Assets.xcassets */,
-				5E6E1C091CF484A700AECE59 /* AppleMusicVid-Bridging-Header.h */,
 				5E6E1BD71CF4846D00AECE59 /* AppDelegate.swift */,
 			);
 			name = "Supporting files";
@@ -288,6 +309,7 @@
 				5EF180C81CFFF20F00EED035 /* APIManager.swift */,
 				5ED164121CFD78E30070D36B /* CountryListInfo.swift */,
 				5E6E1C051CF4847D00AECE59 /* ServerComm.swift */,
+				5E5B4C801D05892B0028F67A /* MusicVideo.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -435,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E6E1C061CF4847D00AECE59 /* ServerComm.swift in Sources */,
+				5E5B4C7C1D057C370028F67A /* constant.swift in Sources */,
 				5E6E1C381CF4855D00AECE59 /* SDWebImageManager.m in Sources */,
 				5E6E1C331CF4855D00AECE59 /* SDImageCache.m in Sources */,
 				5E6E1C371CF4855D00AECE59 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -448,6 +471,7 @@
 				5E6E1C391CF4855D00AECE59 /* SDWebImagePrefetcher.m in Sources */,
 				5E6E1C361CF4855D00AECE59 /* SDWebImageDownloader.m in Sources */,
 				5ED164131CFD78E30070D36B /* CountryListInfo.swift in Sources */,
+				5E5B4C811D05892C0028F67A /* MusicVideo.swift in Sources */,
 				5E6E1C081CF4849500AECE59 /* BaseViewController.swift in Sources */,
 				5E6E1C3E1CF4855D00AECE59 /* UIImage+WebP.m in Sources */,
 				5E6E1C401CF4855D00AECE59 /* UIImageView+WebCache.m in Sources */,

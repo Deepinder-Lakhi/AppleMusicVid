@@ -21,10 +21,6 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         countryTxtFld.center.y = self.view.center.y;
-//        if (countryTxtFld.text!.length == 0)
-//        {
-//            
-//        }
         
         UIView.animateWithDuration(1.0,
             delay: 0.0,
@@ -40,11 +36,6 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK: - Delegates and data sources
     //MARK: Data Sources
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -56,6 +47,12 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
     
     //MARK: Delegates
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        for(index, item) in CountryList.enumerate()
+        {
+            print ("at index \(index) with item \(item)")
+        }
+
         return CountryList[row] as? String
     }
     

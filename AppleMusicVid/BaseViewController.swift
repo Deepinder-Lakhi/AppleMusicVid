@@ -54,7 +54,7 @@ class BaseViewController: UIViewController
             print("User is from %@",user_Region)
         }
         
-        
+
         //call api
         let api = APIManager()
         api.loadData("https://itunes.apple.com/search?term=jack+johnson")
