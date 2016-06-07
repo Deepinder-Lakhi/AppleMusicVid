@@ -10,7 +10,7 @@ import Foundation
 
 class APIManager {
     
-    func loadData(urlString:String, completion: (result: String) -> Void)
+    func loadData(urlString:String, completion: [Videos] -> Void)
     {
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         let session = NSURLSession(configuration: config)
@@ -21,9 +21,7 @@ class APIManager {
             
             if error != nil{
                 //Handling error here
-                dispatch_async(dispatch_get_main_queue()){
-                    completion(result: error!.localizedDescription)
-                }
+                print(error!.localizedDescription)
             } else {
                 //Handling json serialization
                 
@@ -32,26 +30,37 @@ class APIManager {
                      Any type string or value
                      NSJSonSerialization requires the Do / Try / Catch
                      Convert NSData into JSON object cast it to the dictionary*/
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary {
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary,
+                        feed = json["feed"] as? JSONDictionary,
+                        entries = feed["entry"] as? JSONArray
+                    {
                         
-                        print(json)
+                        //                        print(json)
+                        var videos = [Videos]()
+                        
+                        for entry in entries
+                        {
+                            let entry = Videos(data:entry as! JSONDictionary)
+                            videos.append(entry)
+                        }
+                        
+                        let i = videos.count
+                        print("iTunesAPIManager - Total count --> \(i)")
                         
                         let priority = DISPATCH_QUEUE_PRIORITY_HIGH
                         dispatch_sync(dispatch_get_global_queue(priority, 0)){
                             dispatch_sync(dispatch_get_main_queue()){
-                                completion(result: "NSUrlSession Successfull")
+                                completion(videos)
                             }
                         }
                     }
                 } catch {
-                        
-                        //Handling error here
-                        dispatch_async(dispatch_get_main_queue()){
-                            completion(result: "Error in NSUrlSession")
-                        }
-                    }
+                    //Handling error here
+                    print("Error in NSUrlSession")
                 }
             }
-        task.resume()
         }
+        task.resume()
+    }
 }
+

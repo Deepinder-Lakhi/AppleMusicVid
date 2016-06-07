@@ -13,12 +13,35 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     @IBOutlet var musicListTableView: UITableView!;
     var musicVideoArray = NSMutableArray()
     
+    var videos = [Videos]()
+    
     override func viewDidLoad()
     {
-        super.viewDidLoad()
-        sereverCommunication.delegate = self
-        sereverCommunication.getRequest("" as String, viewController: self)
+//        super.viewDidLoad()
+//        sereverCommunication.delegate = self
+//        sereverCommunication.getRequest("" as String, viewController: self)
+        //call api
+        let api = APIManager()
+        api.loadData("https://itunes.apple.com/search?term=jack+johnson",completion: didLoadData)
+
     }
+    
+    func didLoadData(videos: [Videos])
+    {
+        self.videos = videos
+        for item in videos {
+            print("name = \(item.vName)")
+        }
+        mytest()
+    }
+    
+    func mytest()
+    {
+        for item in videos {
+            print("My name = \(item.vName)")
+        }
+    }
+
     
     //MARk:- TableView delegate
     //MARK:-
@@ -28,36 +51,33 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfRows = musicVideoArray.count
+        let numberOfRows = self.videos.count
         return numberOfRows
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Video Cell", forIndexPath: indexPath) as! CustomMusicCell
-//        let object = objects[indexPath.row]
-        
-        let artistNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        
-        let PublisherNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        
-        print (musicVideoArray)
-//        let imageName = self.jsonResult.objectForKey("image") as? String
-//        print(self.musicVideoArray)
-//    print(self.musicVideoArray.objectAtIndex(indexPath.row).valueForKey("im:price") as! String)
-//        ßself.musicVideoArray.valueForKey("im:image").valueForKey("label")!.valueForKey("attributes")!.objectAtIndex(indexPath.row) as? String/
-        let imageName = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        
-        let imageUrl = NSURL(string:imageName!)!
-        cell.musicImgView.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "default"))
 
+        let object = self.videos[indexPath.row]
+        print(object.vName)
+
+        cell.titleLbl?.text = object.vName;
         
-        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+//        let artistNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
         
-        cell.discriptionLbl?.text = NSString(string: "\(PublisherNameStr) /n \(artistNameStr)") as String
-//        print(self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String);
+//        let PublisherNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+//        
+//        print (musicVideoArray)
+//        
+//        let imageName = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+//        
+//        let imageUrl = NSURL(string:imageName!)!
+//        cell.musicImgView.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "default"))
+//
+//        
 //        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-
-//        cell.textLabel?.text = self.musicVideoArray.objectForKey("feed")![indexPath.row] as? String
+//
+//        cell.discriptionLbl?.text = NSString(string: "\(PublisherNameStr) /n \(artistNameStr)") as String
         return cell
     }
     

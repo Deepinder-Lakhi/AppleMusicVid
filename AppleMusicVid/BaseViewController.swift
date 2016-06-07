@@ -20,7 +20,7 @@ class BaseViewController: UIViewController
 {
     //MARK:- Outlet
     //MARK:-
-    
+
     let sereverCommunication : ServerComm = ServerComm()
     var jsonResult = NSDictionary()
     
@@ -53,22 +53,7 @@ class BaseViewController: UIViewController
             user_Region = (NSUserDefaults.standardUserDefaults().valueForKey("userRegion") as? String)!
             print("User is from %@",user_Region)
         }
-        
-
-        //call api
-        let api = APIManager()
-        api.loadData("https://itunes.apple.com/search?term=jack+johnson")
-        {
-            (result:String) in
-            print (result)
-        }
     }
-    
-//    func didLoadData (result:AnyObject)
-//    {
-//        print(result)
-//    }
-    
     
     //MARK:- Custom Method
     //MARK:-
