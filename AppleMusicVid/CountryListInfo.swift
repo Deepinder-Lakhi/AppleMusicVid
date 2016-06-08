@@ -43,6 +43,10 @@ class CountryListInfo: NSObject
         {
             self.countryCode = "au"
         }
+        else
+        {
+            self.countryCode = "us"
+        }
         
         return countryCode
     }

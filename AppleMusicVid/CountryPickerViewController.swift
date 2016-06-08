@@ -16,7 +16,7 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
 
     @IBOutlet weak var countryTxtFld: UITextField!
     
-    var CountryList:NSMutableArray = ["","United States of America", "United kingdom", "India", "Canada", "China", "Australia"];
+    var CountryList:NSMutableArray = ["Choose your region","United States of America", "United kingdom", "India", "Canada", "China", "Australia"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,8 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
             options: UIViewAnimationOptions.CurveEaseInOut,
             animations:
             ({
-            // do stuff
                 self.countryTxtFld.transform = CGAffineTransformMakeScale(1, 1)
             }), completion: nil)
-
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - Delegates and data sources
@@ -48,11 +45,6 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
     //MARK: Delegates
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        for(index, item) in CountryList.enumerate()
-        {
-            print ("at index \(index) with item \(item)")
-        }
-
         return CountryList[row] as? String
     }
     
@@ -64,15 +56,5 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setValue(countryNameModel.getUserCountryInfo(countryStr as String), forKey: "userRegion")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

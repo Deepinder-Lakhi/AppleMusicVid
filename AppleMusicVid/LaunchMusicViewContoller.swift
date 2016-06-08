@@ -11,18 +11,20 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
 {
     @IBOutlet var musicListTableView: UITableView!;
     var musicVideoArray = NSMutableArray()
-    
+    var optionalString = NSString()
+    let prefs = NSUserDefaults.standardUserDefaults()
     var videos = [Videos]()
     
     override func viewDidLoad()
     {
-//        super.viewDidLoad()
-//        sereverCommunication.delegate = self
-//        sereverCommunication.getRequest("" as String, viewController: self)
-        //call api
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/search?term=jack+johnson",completion: didLoadData)
 
+        optionalString = prefs.objectForKey("userRegion") as! String
+        var urlString = NSString(string:"\(baseUrlStr)\(optionalString)\(trailingUrlStr)")
+        print(urlString)
+        
+        urlString = urlString .stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        api.loadData(urlString as String,completion: didLoadData)
     }
     
     func didLoadData(videos: [Videos])
@@ -31,15 +33,11 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
         for item in videos {
             print("name = \(item.vName)")
         }
-        mytest()
+        musicListTableView.delegate = self
+        musicListTableView.dataSource = self
+        musicListTableView.reloadData()
     }
     
-    func mytest()
-    {
-        for item in videos {
-            print("My name = \(item.vName)")
-        }
-    }
 
     
     //MARk:- TableView delegate
@@ -56,27 +54,28 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Video Cell", forIndexPath: indexPath) as! CustomMusicCell
-
+        
         let object = self.videos[indexPath.row]
-        print(object.vName)
-
         cell.titleLbl?.text = object.vName;
         
-//        let artistNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        
-//        let PublisherNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-//        
-//        print (musicVideoArray)
-//        
-//        let imageName = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-//        
-//        let imageUrl = NSURL(string:imageName!)!
+        let imageUrl = NSURL(string:object.vImageUrl)!
 //        cell.musicImgView.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "default"))
-//
-//        
-//        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-//
-//        cell.discriptionLbl?.text = NSString(string: "\(PublisherNameStr) /n \(artistNameStr)") as String
+        let data = NSData(contentsOfURL:imageUrl)!
+//        if data!= nil {
+            cell.musicImgView.image = UIImage(data:data)!
+//        }
+        
+        
+        //        let artistNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        
+        //        let PublisherNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        //
+        //        print (musicVideoArray)
+        //
+        //        let imageName = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        //        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
+        //
+        //        cell.discriptionLbl?.text = NSString(string: "\(PublisherNameStr) /n \(artistNameStr)") as String
         return cell
     }
     

@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppleMusicVid/LaunchMusicViewContoller.swift"
-            timestampString = "486983273.783964"
+            timestampString = "487055117.121315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "didLoadData(_:)"
             landmarkType = "5">
          </BreakpointContent>

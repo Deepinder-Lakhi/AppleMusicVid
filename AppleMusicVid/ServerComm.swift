@@ -156,10 +156,9 @@ class ServerComm: NSObject
         if isConnectedInternet
         {
             startIndicator(viewController.view)
-            print(prefs.objectForKey("userRegion") as! String)
             optionalString = prefs.objectForKey("userRegion") as! String
             
-            var urlString = NSString(string:"\(baseUrlStr)\(optionalString)\(trailingUrlStr)\(parameterString)")
+            var urlString = NSString(string:"\(baseUrlStr)\(optionalString)\(trailingUrlStr)")
             print(urlString)
             
             urlString = urlString .stringByReplacingOccurrencesOfString(" ", withString: "%20")
