@@ -375,9 +375,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYS-sk-fnI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorful" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-ht-oZb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explor Top Music Videos On iTunes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="nmc-1h-l04">
                                         <rect key="frame" x="20" y="20" width="335" height="222"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -398,17 +395,13 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ZXt-uh-pia" secondAttribute="bottom" constant="31" id="0Sw-pf-baI"/>
                                     <constraint firstAttribute="trailing" secondItem="nmc-1h-l04" secondAttribute="trailing" constant="20" id="11P-ys-GEN"/>
-                                    <constraint firstItem="0vh-ht-oZb" firstAttribute="leading" secondItem="TYS-sk-fnI" secondAttribute="leading" id="1B9-f4-2IT"/>
-                                    <constraint firstAttribute="bottom" secondItem="0vh-ht-oZb" secondAttribute="bottom" id="2PG-4h-AfX"/>
                                     <constraint firstAttribute="trailing" secondItem="ZXt-uh-pia" secondAttribute="trailing" constant="20" id="6Ga-N3-FCA"/>
                                     <constraint firstItem="nmc-1h-l04" firstAttribute="leading" secondItem="TYS-sk-fnI" secondAttribute="leading" constant="20" id="EFJ-gn-9Hw"/>
-                                    <constraint firstAttribute="trailing" secondItem="0vh-ht-oZb" secondAttribute="trailing" id="VRq-M2-9fL"/>
                                     <constraint firstItem="ZXt-uh-pia" firstAttribute="top" secondItem="nmc-1h-l04" secondAttribute="bottom" constant="8" id="a8r-g0-sRR"/>
                                     <constraint firstItem="ZXt-uh-pia" firstAttribute="top" secondItem="nmc-1h-l04" secondAttribute="bottom" constant="8" id="b3J-n6-R1D"/>
                                     <constraint firstItem="nmc-1h-l04" firstAttribute="top" secondItem="TYS-sk-fnI" secondAttribute="top" constant="20" id="gDl-xD-pQ2"/>
                                     <constraint firstItem="ZXt-uh-pia" firstAttribute="top" secondItem="nmc-1h-l04" secondAttribute="bottom" constant="8" id="jML-FZ-xYx"/>
                                     <constraint firstItem="ZXt-uh-pia" firstAttribute="leading" secondItem="TYS-sk-fnI" secondAttribute="leading" constant="20" id="klN-BY-7g8"/>
-                                    <constraint firstItem="0vh-ht-oZb" firstAttribute="top" secondItem="TYS-sk-fnI" secondAttribute="top" id="mrz-Jr-YPT"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -492,7 +485,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="colorful" width="288" height="512"/>
-        <image name="maxresdefault" width="2615" height="1743"/>
+        <image name="maxresdefault" width="500" height="333"/>
     </resources>
 </document>

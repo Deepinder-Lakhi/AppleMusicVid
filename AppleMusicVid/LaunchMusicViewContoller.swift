@@ -15,6 +15,10 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     let prefs = NSUserDefaults.standardUserDefaults()
     var videos = [Videos]()
     
+    private struct storyboard {
+        static let cellReuseIdentifier = "Video Cell"
+    }
+    
     override func viewDidLoad()
     {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityStatusChanged), name: "reachabilityChanged", object: nil)
@@ -25,7 +29,8 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
         switch reachabilityStatus {
         case NOACCESS:
             print("No internet")
-        default:return
+        default:
+            runApi()
         }
     }
     
@@ -33,6 +38,7 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "reachabilityChanged", object: nil)
     }
+    
     //MARK:- call api here
     func runApi() {
         let api = APIManager()
@@ -66,7 +72,9 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Video Cell", forIndexPath: indexPath) as! CustomMusicCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! CustomMusicCell
+        cell.video = self.videos[indexPath.row]
+        
         return cell
     }
     

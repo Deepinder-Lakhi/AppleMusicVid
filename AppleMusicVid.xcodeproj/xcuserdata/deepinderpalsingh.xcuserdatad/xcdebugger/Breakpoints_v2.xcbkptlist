@@ -29,8 +29,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "LaunchMusicViewContoller"
-            landmarkType = "3">
+            landmarkName = "reachabilityStatusChanged()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -45,8 +45,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "init(data:)"
-            landmarkType = "5">
+            landmarkName = "Videos"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
