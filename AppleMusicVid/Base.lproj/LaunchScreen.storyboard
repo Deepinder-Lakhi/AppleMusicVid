@@ -17,13 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorful" translatesAutoresizingMaskIntoConstraints="NO" id="61F-39-OSG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqJ-ig-kji">
                                 <rect key="frame" x="0.0" y="241" width="375" height="186"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="186" id="rnN-sg-jZX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="150"/>
-                                <color key="textColor" red="0.074242555230000007" green="0.34795320699999999" blue="0.4852735057" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.043137254899999998" green="0.19215686269999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="3" height="-3"/>
@@ -34,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="77" id="Isu-2b-Bs1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.074242555230000007" green="0.34795320699999999" blue="0.4852735057" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -42,12 +45,16 @@
                         <constraints>
                             <constraint firstItem="vqJ-ig-kji" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="221" id="1Df-Wa-Zio"/>
                             <constraint firstItem="vqJ-ig-kji" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Cvt-s6-Esr"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="61F-39-OSG" secondAttribute="bottom" id="HDS-VF-C1I"/>
+                            <constraint firstItem="61F-39-OSG" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="IA9-yZ-yeu"/>
                             <constraint firstItem="iai-2x-WQV" firstAttribute="top" secondItem="vqJ-ig-kji" secondAttribute="bottom" constant="-31" id="JgE-9L-XAo"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vqJ-ig-kji" secondAttribute="bottom" constant="240" id="Wfb-Fv-cbG"/>
+                            <constraint firstItem="61F-39-OSG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="XP9-mz-u9d"/>
                             <constraint firstAttribute="trailing" secondItem="vqJ-ig-kji" secondAttribute="trailing" id="g0e-J9-M4I"/>
                             <constraint firstItem="vqJ-ig-kji" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jNa-xQ-Pyd"/>
                             <constraint firstAttribute="trailing" secondItem="iai-2x-WQV" secondAttribute="trailing" constant="47" id="lRM-aK-Ymy"/>
                             <constraint firstItem="iai-2x-WQV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="46" id="mhR-FB-iyS"/>
+                            <constraint firstAttribute="trailing" secondItem="61F-39-OSG" secondAttribute="trailing" id="qVA-Ms-dPk"/>
                             <constraint firstItem="vqJ-ig-kji" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="qf8-Zt-Bjy"/>
                         </constraints>
                         <variation key="default">
@@ -64,4 +71,7 @@
             <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="colorful" width="288" height="512"/>
+    </resources>
 </document>

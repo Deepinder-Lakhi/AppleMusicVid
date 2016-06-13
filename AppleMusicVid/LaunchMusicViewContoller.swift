@@ -17,12 +17,27 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     
     override func viewDidLoad()
     {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityStatusChanged), name: "reachabilityChanged", object: nil)
+        reachabilityStatusChanged()
+    }
+    
+    func reachabilityStatusChanged() {
+        switch reachabilityStatus {
+        case NOACCESS:
+            print("No internet")
+        default:return
+        }
+    }
+    
+    //It is called only when object is about to be dealloc
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "reachabilityChanged", object: nil)
+    }
+    //MARK:- call api here
+    func runApi() {
         let api = APIManager()
-
         optionalString = prefs.objectForKey("userRegion") as! String
         var urlString = NSString(string:"\(baseUrlStr)\(optionalString)\(trailingUrlStr)")
-        print(urlString)
-        
         urlString = urlString .stringByReplacingOccurrencesOfString(" ", withString: "%20")
         api.loadData(urlString as String,completion: didLoadData)
     }
@@ -31,14 +46,12 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     {
         self.videos = videos
         for item in videos {
-            print("name = \(item.vName)")
+            print("name = \(item.vImageUrl)")
         }
         musicListTableView.delegate = self
         musicListTableView.dataSource = self
         musicListTableView.reloadData()
     }
-    
-
     
     //MARk:- TableView delegate
     //MARK:-
@@ -54,43 +67,8 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Video Cell", forIndexPath: indexPath) as! CustomMusicCell
-        
-        let object = self.videos[indexPath.row]
-        cell.titleLbl?.text = object.vName;
-        
-        let imageUrl = NSURL(string:object.vImageUrl)!
-//        cell.musicImgView.sd_setImageWithURL(imageUrl, placeholderImage: UIImage(named: "default"))
-        let data = NSData(contentsOfURL:imageUrl)!
-//        if data!= nil {
-            cell.musicImgView.image = UIImage(data:data)!
-//        }
-        
-        
-        //        let artistNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        
-        //        let PublisherNameStr:String? = self.musicVideoArray.valueForKey("rights").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        //
-        //        print (musicVideoArray)
-        //
-        //        let imageName = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        //        cell.titleLbl?.text = self.musicVideoArray.valueForKey("im:name").valueForKey("label")!.objectAtIndex(indexPath.row) as? String
-        //
-        //        cell.discriptionLbl?.text = NSString(string: "\(PublisherNameStr) /n \(artistNameStr)") as String
         return cell
     }
-    
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        //Before animate of cell
-//        cell.alpha = 0
-//        cell.layer.transform = CATransform3DMakeTranslation(0, 250, 20)
-//
-//        
-//        //After animation of cell
-//        UIView.animateWithDuration(1.0) {
-//            cell.alpha = 1
-//        }
-//        
-//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

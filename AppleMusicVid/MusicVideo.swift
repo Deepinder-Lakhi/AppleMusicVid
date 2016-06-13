@@ -11,10 +11,19 @@ import Foundation
 
 class Videos {
     
+    var vRank = 0
+    
     //Data encapsulation
     private var _vName:String
+//    private var _vRights:String
+//    private var _vPrice:String
     private var _vImageUrl:String
+//    private var _vArtist:String
     private var _vVideoUrl:String
+//    private var _vImid:String
+//    private var _vGenre:String
+//    private var _vLinkToiTunes:String
+//    private var _vReleaseDate:String
     
     //Make getter
     var vName: String {
@@ -28,20 +37,25 @@ class Videos {
     var vVideoUrl: String {
         return _vVideoUrl
     }
+//    var vDiscription = String {
+//        return _vDiscription;
+//    }
+    
     
     init (data: JSONDictionary) {
         //if do not initializer all property we will get error meassage
         //Retun from initializer without intializing  all stored properties
         
         //Video name
-        if let name = data["im:name"] as? JSONDictionary, vName = name["label"] as? String {
+        if let name = data["im:name"] as? JSONDictionary,
+            vName = name["label"] as? String {
             self._vName = vName;
         } else
         {
             self._vName = ""
         }
         
-        //The Video image
+        //The Video image Url
         if let img = data["im:image"] as? JSONArray,
             image = img[2] as? JSONDictionary,
             immage = image["label"] as? String
@@ -63,5 +77,6 @@ class Videos {
         } else{
             self._vVideoUrl = ""
         }
+        
     }
 }

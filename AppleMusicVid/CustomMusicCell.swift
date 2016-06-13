@@ -10,19 +10,20 @@ import UIKit
 
 class CustomMusicCell: UITableViewCell {
 
+    var videos:Videos? {
+        didSet {
+            updateCell()
+        }
+    }
+    
     @IBOutlet weak var musicImgView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var discriptionLbl: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func updateCell() {
+        titleLbl.text = videos?.vName
+        musicImgView.image = UIImage(named: "maxresdefault")
+        
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
