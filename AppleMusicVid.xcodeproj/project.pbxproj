@@ -39,7 +39,8 @@
 		5E6E1C411CF4855D00AECE59 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C301CF4855D00AECE59 /* UIView+WebCacheOperation.m */; };
 		5E6E1C4B1CF487E700AECE59 /* LaunchMusicViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */; };
 		5ED164131CFD78E30070D36B /* CountryListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED164121CFD78E30070D36B /* CountryListInfo.swift */; };
-		5EE4B06E1D07F3E100FA5D95 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4B06D1D07F3E100FA5D95 /* SettingsController.swift */; };
+		5ED9F45F1D0FECDC00B11D76 /* VideoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED9F45E1D0FECDB00B11D76 /* VideoPreViewController.swift */; };
+		5EE4B06E1D07F3E100FA5D95 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4B06D1D07F3E100FA5D95 /* SettingsViewController.swift */; };
 		5EE4B0721D07FC3E00FA5D95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE4B0711D07FC3E00FA5D95 /* Assets.xcassets */; };
 		5EF180C91CFFF20F00EED035 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF180C81CFFF20F00EED035 /* APIManager.swift */; };
 /* End PBXBuildFile section */
@@ -119,7 +120,8 @@
 		5E6E1C301CF4855D00AECE59 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchMusicViewContoller.swift; sourceTree = "<group>"; };
 		5ED164121CFD78E30070D36B /* CountryListInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListInfo.swift; sourceTree = "<group>"; };
-		5EE4B06D1D07F3E100FA5D95 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		5ED9F45E1D0FECDB00B11D76 /* VideoPreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPreViewController.swift; sourceTree = "<group>"; };
+		5EE4B06D1D07F3E100FA5D95 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5EE4B0711D07FC3E00FA5D95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EF180C81CFFF20F00EED035 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,7 +303,8 @@
 				5E6E1C071CF4849500AECE59 /* BaseViewController.swift */,
 				5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */,
 				5E6E1C4A1CF487E700AECE59 /* LaunchMusicViewContoller.swift */,
-				5EE4B06D1D07F3E100FA5D95 /* SettingsController.swift */,
+				5ED9F45E1D0FECDB00B11D76 /* VideoPreViewController.swift */,
+				5EE4B06D1D07F3E100FA5D95 /* SettingsViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -474,7 +477,7 @@
 				5EF180C91CFFF20F00EED035 /* APIManager.swift in Sources */,
 				5E6E1C391CF4855D00AECE59 /* SDWebImagePrefetcher.m in Sources */,
 				5E6E1C361CF4855D00AECE59 /* SDWebImageDownloader.m in Sources */,
-				5EE4B06E1D07F3E100FA5D95 /* SettingsController.swift in Sources */,
+				5EE4B06E1D07F3E100FA5D95 /* SettingsViewController.swift in Sources */,
 				5ED164131CFD78E30070D36B /* CountryListInfo.swift in Sources */,
 				5E5B4C811D05892C0028F67A /* MusicVideo.swift in Sources */,
 				5E6E1C081CF4849500AECE59 /* BaseViewController.swift in Sources */,
@@ -484,6 +487,7 @@
 				5E6E1C311CF4855D00AECE59 /* MKAnnotationView+WebCache.m in Sources */,
 				5E6E1C341CF4855D00AECE59 /* SDWebImageCompat.m in Sources */,
 				5E27BDB41CFDBCAA00A32D5C /* CustomMusicCell.swift in Sources */,
+				5ED9F45F1D0FECDC00B11D76 /* VideoPreViewController.swift in Sources */,
 				5E6E1C0B1CF4852800AECE59 /* Reachability.swift in Sources */,
 				5E6E1BD81CF4846D00AECE59 /* AppDelegate.swift in Sources */,
 				5E6E1C3D1CF4855D00AECE59 /* UIImage+MultiFormat.m in Sources */,

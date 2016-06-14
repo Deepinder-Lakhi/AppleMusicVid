@@ -28,9 +28,12 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     func reachabilityStatusChanged() {
         switch reachabilityStatus {
         case NOACCESS:
-            print("No internet")
+            self.view.internetNotFoundView(0, borderWidth: 0, borderColor:UIColor.lightGrayColor(), bgColor: UIColor.lightGrayColor(), isView: "NoInternet")
         default:
-            runApi()
+            if videos.count == 0 {
+                runApi()
+            }
+            
         }
     }
     
@@ -51,9 +54,6 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     func didLoadData(videos: [Videos])
     {
         self.videos = videos
-//        for item in videos {
-//            print("name = \(item.vImageUrl)")
-//        }
         musicListTableView.delegate = self
         musicListTableView.dataSource = self
         musicListTableView.reloadData()
@@ -74,6 +74,7 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! CustomMusicCell
         cell.video = self.videos[indexPath.row]
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
     
@@ -81,7 +82,7 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
         
     }
     
-    //MARk:- Server responce delegate
+    //MARk:- Server response delegate
     //MARK:-
     
     func serverResponseArrived(Response: AnyObject)
@@ -91,5 +92,24 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
         print(musicVideoArray);
         self.musicListTableView.reloadData()
     }
-}
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        print(segue.identifier!)
+        if self.videos.count != 0 {
+            if segue.identifier == "showDetailVC" {
+                let vc = segue.destinationViewController as! VideoPreViewController
+//                vc.videoDetailArray = (self.videos[0] as? NSMutableArray)!
+                print(vc)
+            }
+        }
+    }
 
+    
+    
+    
+    
+}

@@ -8,11 +8,11 @@
         <!--Settings-->
         <scene sceneID="WXB-Vy-kRD">
             <objects>
-                <tableViewController title="Settings" id="hmr-m3-9Pp" customClass="SettingsController" customModule="AppleMusicVid" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="hmr-m3-9Pp" customClass="SettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="en1-e0-m9f">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.19215686269999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="qdp-00-4SH" style="IBUITableViewCellStyleDefault" id="p5r-xF-bJd">
@@ -162,7 +162,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-Wx-5u9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-Wx-5u9">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktr-Xh-K1R">
@@ -187,7 +187,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.81139184399999997" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.074242555230000007" green="0.34795320699999999" blue="0.4852735057" alpha="0.5" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="2n0-RF-SfD"/>
                                                         <constraint firstItem="6gB-nW-h4n" firstAttribute="leading" secondItem="ktr-Xh-K1R" secondAttribute="leading" constant="8" id="IUh-Lv-QT6"/>
@@ -220,13 +220,13 @@
                                             <outlet property="discriptionLbl" destination="6gB-nW-h4n" id="yb5-uH-hyn"/>
                                             <outlet property="musicImgView" destination="wR5-Wx-5u9" id="1fc-0T-cDF"/>
                                             <outlet property="titleLbl" destination="I4t-ry-95d" id="XmS-ES-JNe"/>
-                                            <segue destination="fGH-8C-wuZ" kind="show" id="Uka-If-2Ek"/>
+                                            <segue destination="fGH-8C-wuZ" kind="show" identifier="showDetailVC" id="Uka-If-2Ek"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.19215686269999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="t7q-zr-o1p" secondAttribute="trailing" id="8Hi-gz-8FR"/>
@@ -239,7 +239,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="nDk-EN-VBT"/>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="xP7-mZ-gNK">
                             <connections>
-                                <segue destination="hmr-m3-9Pp" kind="show" id="tMX-8W-uRd"/>
+                                <segue destination="hmr-m3-9Pp" kind="show" identifier="showSettingVC" id="tMX-8W-uRd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -255,7 +255,7 @@
         <!--DETAILS-->
         <scene sceneID="nxc-bh-ABj">
             <objects>
-                <viewController id="fGH-8C-wuZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoPreViewControllerID" id="fGH-8C-wuZ" customClass="VideoPreViewController" customModule="AppleMusicVid" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UsJ-tX-Nmf"/>
                         <viewControllerLayoutGuide type="bottom" id="sS4-hz-18f"/>
@@ -316,14 +316,14 @@
                                     <constraint firstItem="UW6-X3-gc2" firstAttribute="top" secondItem="kYo-V0-raV" secondAttribute="top" constant="10" id="zBY-M1-NlR"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maxresdefault" translatesAutoresizingMaskIntoConstraints="NO" id="lGr-p0-hmF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maxresdefault" translatesAutoresizingMaskIntoConstraints="NO" id="lGr-p0-hmF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="cpD-Ac-R5s"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.13626199825479923" green="0.13626199825479923" blue="0.13626199825479923" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.19215686269999999" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="K6p-Ry-I7D" firstAttribute="leading" secondItem="qxd-GX-4iO" secondAttribute="leading" constant="8" id="EkB-IF-Xq4"/>
                             <constraint firstItem="lGr-p0-hmF" firstAttribute="top" secondItem="UsJ-tX-Nmf" secondAttribute="bottom" id="FCg-JV-B6z"/>

@@ -22,60 +22,52 @@ class CustomMusicCell: UITableViewCell {
     @IBOutlet weak var discriptionLbl: UILabel!
     
     func updateCell() {
-        titleLbl.text = ("\(video?.vRank)")
+        titleLbl.text = ("#\(video!.vRank)")
         discriptionLbl.text = video?.vName
-//        musicImgView.image = UIImage(named: "maxresdefault")
+        musicImgView.image = UIImage(named: "placeHolder")
+        
+        
         if video!.vImageData != nil {
-            print("Get data from array")
             musicImgView.image = UIImage(data: video!.vImageData!)
-        } else {
-            getVideoImage(video!, imageView: musicImgView)
+        }
+        else
+        {
+            GetVideoImage(video!, imageView: musicImgView)
         }
     }
     
-    func getVideoImage(video: Videos, imageView: UIImageView) {
+    func GetVideoImage(video: Videos, imageView : UIImageView){
         
-        /*! Back Ground Procesing
-         * @constant DISPATCH_QUEUE_PRIORITY_HIGH
-         * Items dispatched to the queue will run at high priority,
-         * i.e. the queue will be scheduled for execution before
-         * any default priority or low priority queue.
-         *
-         * @constant DISPATCH_QUEUE_PRIORITY_DEFAULT
-         * Items dispatched to the queue will run at the default
-         * priority, i.e. the queue will be scheduled for execution
-         * after all high priority queues have been scheduled, but
-         * before any low priority queues have been scheduled.
-         *
-         * @constant DISPATCH_QUEUE_PRIORITY_LOW
-         * Items dispatched to the queue will run at low priority,
-         * i.e. the queue will be scheduled for execution after all
-         * default priority and high priority queues have been
-         * scheduled.
-         *
-         * @constant DISPATCH_QUEUE_PRIORITY_BACKGROUND
-         * Items dispatched to the queue will run at background priority, i.e. the queue
-         * will be scheduled for execution after all higher priority queues have been
-         * scheduled and the system will run items on this queue on a thread with
-         * background status as per setpriority(2) (i.e. disk I/O is throttled and the
-         * thread's scheduling priority is set to lowest value).
-         */
+        // Background thread
+        //  DISPATCH_QUEUE_PRIORITY_HIGH Items dispatched to the queue will run at high priority, i.e. the queue will be scheduled for execution before any default priority or low priority queue.
+        //
+        //  DISPATCH_QUEUE_PRIORITY_DEFAULT Items dispatched to the queue will run at the default priority, i.e. the queue will be scheduled for execution after all high priority queues have been scheduled, but before any low priority queues have been scheduled.
+        //
+        //  DISPATCH_QUEUE_PRIORITY_LOW Items dispatched to the queue will run at low priority, i.e. the queue will be scheduled for execution after all default priority and high priority queues have been scheduled.
+        
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            print(video.vImageUrl)
+            
             let data = NSData(contentsOfURL: NSURL(string: video.vImageUrl)!)
             
-            var image: UIImage?
+            var image : UIImage?
             if data != nil {
-                video.vImageUrl
+                video.vImageData = data
                 image = UIImage(data: data!)
+            } else {
+                image = UIImage(named: "placeHolder")
             }
             
-            // Move back to main queue
+            // move back to Main Queue
             dispatch_async(dispatch_get_main_queue()) {
                 imageView.image = image
             }
         }
     }
+    
+    
+    
+    
+    
     
 }

@@ -16,7 +16,7 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
 
     @IBOutlet weak var countryTxtFld: UITextField!
     
-    var CountryList:NSMutableArray = ["United States of America", "United kingdom", "India", "Canada", "China", "Australia"];
+    var CountryList:NSMutableArray = ["United States of America", "United kingdom", "India", "Canada", "Australia"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,10 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
         
         let prefs = NSUserDefaults.standardUserDefaults()
         prefs.setValue(countryNameModel.getUserCountryInfo(countryStr as String), forKey: "userRegion")
+    }
+    
+    deinit {
+        emptyUserDefault()
     }
 
 }
