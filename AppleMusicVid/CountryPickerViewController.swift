@@ -16,12 +16,12 @@ class CountryPickerViewController: BaseViewController, UIPickerViewDelegate, UIP
 
     @IBOutlet weak var countryTxtFld: UITextField!
     
-    var CountryList:NSMutableArray = ["Choose your region","United States of America", "United kingdom", "India", "Canada", "China", "Australia"];
+    var CountryList:NSMutableArray = ["United States of America", "United kingdom", "India", "Canada", "China", "Australia"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
         countryTxtFld.center.y = self.view.center.y;
-        
+        countryTxtFld.text = CountryList[0] as? String
         UIView.animateWithDuration(1.0,
             delay: 0.0,
             usingSpringWithDamping: 0.3,

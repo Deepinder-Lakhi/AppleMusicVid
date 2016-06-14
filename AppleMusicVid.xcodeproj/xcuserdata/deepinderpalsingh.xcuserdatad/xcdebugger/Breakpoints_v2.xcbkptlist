@@ -23,13 +23,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppleMusicVid/LaunchMusicViewContoller.swift"
-            timestampString = "487056596.33897"
+            filePath = "AppleMusicVid/MusicVideo.swift"
+            timestampString = "487056644.919655"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "reachabilityStatusChanged()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "Videos"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppleMusicVid/CustomMusicCell.swift"
+            timestampString = "487578806.283157"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "updateCell()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -39,46 +55,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppleMusicVid/MusicVideo.swift"
-            timestampString = "487056644.919655"
+            filePath = "AppleMusicVid/CustomMusicCell.swift"
+            timestampString = "487578581.826963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "Videos"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AppleMusicVid.Videos.init (data : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; AppleMusicVid.Videos"
-                  moduleName = "AppleMusicVid"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepinderpalsingh/Developer/Source/Xcode%20Projects/Current%20Projects/AppleMusicVid/AppleMusicVid/MusicVideo.swift"
-                  timestampString = "487085571.844955"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "1283">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AppleMusicVid.Videos.init (data : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; AppleMusicVid.Videos"
-                  moduleName = "AppleMusicVid"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/deepinderpalsingh/Developer/Source/Xcode%20Projects/Current%20Projects/AppleMusicVid/AppleMusicVid/MusicVideo.swift"
-                  timestampString = "487085571.845365"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "1559">
-               </Location>
-            </Locations>
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "getVideoImage(_:imageView:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -87,13 +71,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppleMusicVid/AppDelegate.swift"
-            timestampString = "487064541.774244"
+            filePath = "AppleMusicVid/LaunchMusicViewContoller.swift"
+            timestampString = "487577245.841102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "statusChangedWithReachability(_:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "runApi()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

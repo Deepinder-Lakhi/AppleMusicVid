@@ -107,7 +107,9 @@ class Videos {
             image = img[2] as? JSONDictionary,
             immage = image["label"] as? String
         {
-            self._vImageUrl = immage.stringByReplacingOccurrencesOfString("100x100", withString: "600X600")
+            print(immage)
+            self._vImageUrl = immage.stringByReplacingOccurrencesOfString("100x100", withString: "600x600")
+//            self._vImageUrl = "http://is1.mzstatic.com/image/thumb/Video50/v4/35/d5/ee/35d5eef1-bf59-7ed4-a26c-a142671d272a/8864459030410101VIC.jpg/600x600bb-85.jpg"
             print(self._vImageUrl)
         } else{
             self._vImageUrl = ""

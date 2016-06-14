@@ -12,7 +12,8 @@ class CustomMusicCell: UITableViewCell {
 
     var video:Videos? {
         didSet {
-            updateCell()
+            musicImgView.image = nil
+             updateCell()
         }
     }
     
@@ -23,9 +24,13 @@ class CustomMusicCell: UITableViewCell {
     func updateCell() {
         titleLbl.text = ("\(video?.vRank)")
         discriptionLbl.text = video?.vName
-        musicImgView.image = UIImage(named: "maxresdefault")
-        
-        
+//        musicImgView.image = UIImage(named: "maxresdefault")
+        if video!.vImageData != nil {
+            print("Get data from array")
+            musicImgView.image = UIImage(data: video!.vImageData!)
+        } else {
+            getVideoImage(video!, imageView: musicImgView)
+        }
     }
     
     func getVideoImage(video: Videos, imageView: UIImageView) {
@@ -57,15 +62,19 @@ class CustomMusicCell: UITableViewCell {
          */
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            print(video.vImageUrl)
             let data = NSData(contentsOfURL: NSURL(string: video.vImageUrl)!)
             
             var image: UIImage?
             if data != nil {
                 video.vImageUrl
-                
                 image = UIImage(data: data!)
             }
             
+            // Move back to main queue
+            dispatch_async(dispatch_get_main_queue()) {
+                imageView.image = image
+            }
         }
     }
     

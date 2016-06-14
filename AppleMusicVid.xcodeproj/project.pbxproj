@@ -395,6 +395,7 @@
 				TargetAttributes = {
 					5E6E1BD31CF4846D00AECE59 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = J5XD4LX7AA;
 					};
 					5E6E1BE71CF4846E00AECE59 = {
 						CreatedOnToolsVersion = 7.2;
@@ -631,13 +632,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
 				INFOPLIST_FILE = AppleMusicVid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dimonds.AppleMusicVid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katchup.appios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "40243bb8-1771-4cb7-99ea-4442c15f0d33";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppleMusicVid/AppleMusicVid-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -649,13 +650,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
 				INFOPLIST_FILE = AppleMusicVid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dimonds.AppleMusicVid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katchup.appios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "40243bb8-1771-4cb7-99ea-4442c15f0d33";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppleMusicVid/AppleMusicVid-Bridging-Header.h";
 			};
 			name = Release;

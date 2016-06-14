@@ -51,9 +51,9 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     func didLoadData(videos: [Videos])
     {
         self.videos = videos
-        for item in videos {
-            print("name = \(item.vImageUrl)")
-        }
+//        for item in videos {
+//            print("name = \(item.vImageUrl)")
+//        }
         musicListTableView.delegate = self
         musicListTableView.dataSource = self
         musicListTableView.reloadData()
@@ -74,7 +74,6 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! CustomMusicCell
         cell.video = self.videos[indexPath.row]
-        
         return cell
     }
     
