@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 var selectedUserCategory = NSString()
 var baseUrlStr = String("https://itunes.apple.com/")

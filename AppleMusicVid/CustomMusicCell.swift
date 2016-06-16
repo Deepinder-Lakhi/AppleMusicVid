@@ -12,7 +12,7 @@ class CustomMusicCell: UITableViewCell {
 
     var video:Videos? {
         didSet {
-            musicImgView.image = nil
+//            musicImgView.image = nil
              updateCell()
         }
     }
@@ -20,14 +20,19 @@ class CustomMusicCell: UITableViewCell {
     @IBOutlet weak var musicImgView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var discriptionLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var buyButton: UIButton!
     
     func updateCell() {
+        
+        titleLbl.font = UIFont.preferredFontForTextStyle("")
         titleLbl.text = ("#\(video!.vRank)")
+        priceLbl.text = video!.vPrice
         discriptionLbl.text = video?.vName
         musicImgView.image = UIImage(named: "placeHolder")
+        buyButton.addTarget(self, action: #selector(self.openThisUrlInSafari(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
-        
-        if video!.vImageData != nil {
+        if video!.vImageData != nil {   
             musicImgView.image = UIImage(data: video!.vImageData!)
         }
         else
@@ -65,9 +70,10 @@ class CustomMusicCell: UITableViewCell {
         }
     }
     
-    
-    
-    
-    
+    func openThisUrlInSafari(sender:UIButton!) {
+        if let url = NSURL(string:(video?.vVideoUrl)!) {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
     
 }

@@ -29,7 +29,7 @@ class SettingsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 7
     }
 
     /*
@@ -41,6 +41,7 @@ class SettingsViewController: UITableViewController {
         return cell
     }
     */
+ 
 
     /*
     // Override to support conditional editing of the table view.

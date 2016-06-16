@@ -15,12 +15,15 @@ class APIManager {
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         let session = NSURLSession(configuration: config)
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         let url = NSURL(string: urlString)!
         let task = session.dataTaskWithURL(url) {
             (data, response, error) -> Void in
             
             if error != nil{
                 //Handling error here
+                self.catchError()
                 print(error!.localizedDescription)
             } else {
                 //Handling json serialization
@@ -51,16 +54,26 @@ class APIManager {
                         dispatch_sync(dispatch_get_global_queue(priority, 0)){
                             dispatch_sync(dispatch_get_main_queue()){
                                 completion(videos)
+                                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                
                             }
                         }
                     }
                 } catch {
                     //Handling error here
+                    self.catchError()
                     print("Error in NSUrlSession")
                 }
             }
         }
         task.resume()
     }
+    
+    func catchError()
+    {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    
+    
 }
-

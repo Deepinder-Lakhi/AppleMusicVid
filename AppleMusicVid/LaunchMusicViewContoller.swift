@@ -14,9 +14,11 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     var optionalString = NSString()
     let prefs = NSUserDefaults.standardUserDefaults()
     var videos = [Videos]()
+
     
     private struct storyboard {
         static let cellReuseIdentifier = "Video Cell"
+        static let segueIdenitfier = "showDetailVC"
     }
     
     override func viewDidLoad()
@@ -33,7 +35,6 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
             if videos.count == 0 {
                 runApi()
             }
-            
         }
     }
     
@@ -81,7 +82,7 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-    
+        
     //MARk:- Server response delegate
     //MARK:-
     
@@ -99,17 +100,13 @@ class LaunchMusicViewContoller: BaseViewController, ServerCommDelegate, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         print(segue.identifier!)
-        if self.videos.count != 0 {
-            if segue.identifier == "showDetailVC" {
-                let vc = segue.destinationViewController as! VideoPreViewController
-//                vc.videoDetailArray = (self.videos[0] as? NSMutableArray)!
-                print(vc)
+        if segue.identifier == storyboard.segueIdenitfier {
+            if let indexpath = musicListTableView.indexPathForSelectedRow {
+                let video = videos[indexpath.row]
+                let dvc = segue.destinationViewController as! VideoPreViewController
+                dvc.videos = video
             }
         }
     }
 
-    
-    
-    
-    
 }

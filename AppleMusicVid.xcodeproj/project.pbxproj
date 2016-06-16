@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E193E511D111AAF007F3B47 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E193E4F1D111AAF007F3B47 /* Interface.storyboard */; };
+		5E193E531D111AAF007F3B47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E193E521D111AAF007F3B47 /* Assets.xcassets */; };
+		5E193E5A1D111AAF007F3B47 /* Next Music Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5E193E591D111AAF007F3B47 /* Next Music Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5E193E611D111AAF007F3B47 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E193E601D111AAF007F3B47 /* InterfaceController.swift */; };
+		5E193E631D111AAF007F3B47 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E193E621D111AAF007F3B47 /* ExtensionDelegate.swift */; };
+		5E193E651D111AAF007F3B47 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E193E641D111AAF007F3B47 /* NotificationController.swift */; };
+		5E193E671D111AAF007F3B47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E193E661D111AAF007F3B47 /* Assets.xcassets */; };
+		5E193E6B1D111AAF007F3B47 /* Next Music.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5E193E4D1D111AAE007F3B47 /* Next Music.app */; };
 		5E27BDB41CFDBCAA00A32D5C /* CustomMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */; };
+		5E387D441D116E1600024519 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E387D431D116E1500024519 /* UIKit.framework */; };
+		5E387D461D116E2100024519 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E387D451D116E2100024519 /* MediaPlayer.framework */; };
+		5E387D481D116FA500024519 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E387D471D116FA500024519 /* AVFoundation.framework */; };
+		5E387D4A1D116FB400024519 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E387D491D116FB400024519 /* AVKit.framework */; };
 		5E5AD75A1CF86F7700DDEDE8 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */; };
 		5E5B4C7C1D057C370028F67A /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B4C7B1D057C360028F67A /* constant.swift */; };
 		5E5B4C811D05892C0028F67A /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B4C801D05892B0028F67A /* MusicVideo.swift */; };
@@ -46,6 +58,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5E193E5B1D111AAF007F3B47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E6E1BCC1CF4846D00AECE59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E193E581D111AAF007F3B47;
+			remoteInfo = "Next Music Extension";
+		};
+		5E193E691D111AAF007F3B47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E6E1BCC1CF4846D00AECE59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E193E4C1D111AAE007F3B47;
+			remoteInfo = "Next Music";
+		};
 		5E6E1BE91CF4846E00AECE59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E6E1BCC1CF4846D00AECE59 /* Project object */;
@@ -62,8 +88,48 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5E193E711D111AB0007F3B47 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5E193E5A1D111AAF007F3B47 /* Next Music Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E193E731D111AB0007F3B47 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5E193E6B1D111AAF007F3B47 /* Next Music.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5E193E4D1D111AAE007F3B47 /* Next Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E193E501D111AAF007F3B47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5E193E521D111AAF007F3B47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E193E541D111AAF007F3B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E193E591D111AAF007F3B47 /* Next Music Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Next Music Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E193E5F1D111AAF007F3B47 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5E193E601D111AAF007F3B47 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5E193E621D111AAF007F3B47 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5E193E641D111AAF007F3B47 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5E193E661D111AAF007F3B47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E193E681D111AAF007F3B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E27BDB31CFDBCAA00A32D5C /* CustomMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMusicCell.swift; sourceTree = "<group>"; };
+		5E387D431D116E1500024519 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5E387D451D116E2100024519 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5E387D471D116FA500024519 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5E387D491D116FB400024519 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		5E5AD7591CF86F7700DDEDE8 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
 		5E5B4C7B1D057C360028F67A /* constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		5E5B4C801D05892B0028F67A /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
@@ -127,10 +193,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E193E561D111AAF007F3B47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E6E1BD11CF4846D00AECE59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E387D4A1D116FB400024519 /* AVKit.framework in Frameworks */,
+				5E387D481D116FA500024519 /* AVFoundation.framework in Frameworks */,
+				5E387D461D116E2100024519 /* MediaPlayer.framework in Frameworks */,
+				5E387D441D116E1600024519 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +228,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E193E4E1D111AAE007F3B47 /* Next Music */ = {
+			isa = PBXGroup;
+			children = (
+				5E193E4F1D111AAF007F3B47 /* Interface.storyboard */,
+				5E193E521D111AAF007F3B47 /* Assets.xcassets */,
+				5E193E541D111AAF007F3B47 /* Info.plist */,
+			);
+			path = "Next Music";
+			sourceTree = "<group>";
+		};
+		5E193E5D1D111AAF007F3B47 /* Next Music Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5E193E601D111AAF007F3B47 /* InterfaceController.swift */,
+				5E193E621D111AAF007F3B47 /* ExtensionDelegate.swift */,
+				5E193E641D111AAF007F3B47 /* NotificationController.swift */,
+				5E193E661D111AAF007F3B47 /* Assets.xcassets */,
+				5E193E681D111AAF007F3B47 /* Info.plist */,
+				5E193E5E1D111AAF007F3B47 /* Supporting Files */,
+			);
+			path = "Next Music Extension";
+			sourceTree = "<group>";
+		};
+		5E193E5E1D111AAF007F3B47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5E193E5F1D111AAF007F3B47 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5E5B4C7D1D057C4D0028F67A /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,9 +278,15 @@
 		5E6E1BCB1CF4846D00AECE59 = {
 			isa = PBXGroup;
 			children = (
+				5E387D491D116FB400024519 /* AVKit.framework */,
+				5E387D471D116FA500024519 /* AVFoundation.framework */,
+				5E387D451D116E2100024519 /* MediaPlayer.framework */,
+				5E387D431D116E1500024519 /* UIKit.framework */,
 				5E6E1BD61CF4846D00AECE59 /* AppleMusicVid */,
 				5E6E1BEB1CF4846E00AECE59 /* AppleMusicVidTests */,
 				5E6E1BF61CF4846E00AECE59 /* AppleMusicVidUITests */,
+				5E193E4E1D111AAE007F3B47 /* Next Music */,
+				5E193E5D1D111AAF007F3B47 /* Next Music Extension */,
 				5E6E1BD51CF4846D00AECE59 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,6 +297,8 @@
 				5E6E1BD41CF4846D00AECE59 /* AppleMusicVid.app */,
 				5E6E1BE81CF4846E00AECE59 /* AppleMusicVidTests.xctest */,
 				5E6E1BF31CF4846E00AECE59 /* AppleMusicVidUITests.xctest */,
+				5E193E4D1D111AAE007F3B47 /* Next Music.app */,
+				5E193E591D111AAF007F3B47 /* Next Music Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,6 +449,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E193E4C1D111AAE007F3B47 /* Next Music */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E193E721D111AB0007F3B47 /* Build configuration list for PBXNativeTarget "Next Music" */;
+			buildPhases = (
+				5E193E4B1D111AAE007F3B47 /* Resources */,
+				5E193E711D111AB0007F3B47 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E193E5C1D111AAF007F3B47 /* PBXTargetDependency */,
+			);
+			name = "Next Music";
+			productName = "Next Music";
+			productReference = 5E193E4D1D111AAE007F3B47 /* Next Music.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5E193E581D111AAF007F3B47 /* Next Music Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E193E701D111AB0007F3B47 /* Build configuration list for PBXNativeTarget "Next Music Extension" */;
+			buildPhases = (
+				5E193E551D111AAF007F3B47 /* Sources */,
+				5E193E561D111AAF007F3B47 /* Frameworks */,
+				5E193E571D111AAF007F3B47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Next Music Extension";
+			productName = "Next Music Extension";
+			productReference = 5E193E591D111AAF007F3B47 /* Next Music Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		5E6E1BD31CF4846D00AECE59 /* AppleMusicVid */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E6E1BFC1CF4846E00AECE59 /* Build configuration list for PBXNativeTarget "AppleMusicVid" */;
@@ -340,10 +490,12 @@
 				5E6E1BD01CF4846D00AECE59 /* Sources */,
 				5E6E1BD11CF4846D00AECE59 /* Frameworks */,
 				5E6E1BD21CF4846D00AECE59 /* Resources */,
+				5E193E731D111AB0007F3B47 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5E193E6A1D111AAF007F3B47 /* PBXTargetDependency */,
 			);
 			name = AppleMusicVid;
 			productName = AppleMusicVid;
@@ -392,10 +544,17 @@
 		5E6E1BCC1CF4846D00AECE59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Dimonds Infosys Pvt Ltd.";
 				TargetAttributes = {
+					5E193E4C1D111AAE007F3B47 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = J5XD4LX7AA;
+					};
+					5E193E581D111AAF007F3B47 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					5E6E1BD31CF4846D00AECE59 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = J5XD4LX7AA;
@@ -426,11 +585,30 @@
 				5E6E1BD31CF4846D00AECE59 /* AppleMusicVid */,
 				5E6E1BE71CF4846E00AECE59 /* AppleMusicVidTests */,
 				5E6E1BF21CF4846E00AECE59 /* AppleMusicVidUITests */,
+				5E193E4C1D111AAE007F3B47 /* Next Music */,
+				5E193E581D111AAF007F3B47 /* Next Music Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E193E4B1D111AAE007F3B47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E193E531D111AAF007F3B47 /* Assets.xcassets in Resources */,
+				5E193E511D111AAF007F3B47 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E193E571D111AAF007F3B47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E193E671D111AAF007F3B47 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E6E1BD21CF4846D00AECE59 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,6 +637,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E193E551D111AAF007F3B47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E193E651D111AAF007F3B47 /* NotificationController.swift in Sources */,
+				5E193E631D111AAF007F3B47 /* ExtensionDelegate.swift in Sources */,
+				5E193E611D111AAF007F3B47 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E6E1BD01CF4846D00AECE59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,6 +703,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5E193E5C1D111AAF007F3B47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E193E581D111AAF007F3B47 /* Next Music Extension */;
+			targetProxy = 5E193E5B1D111AAF007F3B47 /* PBXContainerItemProxy */;
+		};
+		5E193E6A1D111AAF007F3B47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E193E4C1D111AAE007F3B47 /* Next Music */;
+			targetProxy = 5E193E691D111AAF007F3B47 /* PBXContainerItemProxy */;
+		};
 		5E6E1BEA1CF4846E00AECE59 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5E6E1BD31CF4846D00AECE59 /* AppleMusicVid */;
@@ -528,6 +726,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5E193E4F1D111AAF007F3B47 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E193E501D111AAF007F3B47 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		5E6E1BDB1CF4846D00AECE59 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -547,6 +753,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E193E6C1D111AB0007F3B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Next_Music_Extension;
+				INFOPLIST_FILE = "Next Music/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.katchup.appios.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5E193E6D1D111AB0007F3B47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Gelb (FB79R9ZHHQ)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Next_Music_Extension;
+				INFOPLIST_FILE = "Next Music/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.katchup.appios.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		5E193E6E1D111AB0007F3B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "Next Music Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.katchup.appios.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5E193E6F1D111AB0007F3B47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "Next Music Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.katchup.appios.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		5E6E1BFA1CF4846E00AECE59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -716,6 +990,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E193E701D111AB0007F3B47 /* Build configuration list for PBXNativeTarget "Next Music Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E193E6E1D111AB0007F3B47 /* Debug */,
+				5E193E6F1D111AB0007F3B47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E193E721D111AB0007F3B47 /* Build configuration list for PBXNativeTarget "Next Music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E193E6C1D111AB0007F3B47 /* Debug */,
+				5E193E6D1D111AB0007F3B47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E6E1BCF1CF4846D00AECE59 /* Build configuration list for PBXProject "AppleMusicVid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
